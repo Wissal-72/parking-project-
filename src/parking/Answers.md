@@ -47,3 +47,9 @@ Review table :
 `Cashpayment.refund` throws an `UnsupportedOperationException`. This breaks the Liskov Substitution principle 
 because the interface `PaymentMethod` promises a refund method.   
 $\rightarrow$ the `instanceof` test is not an acceptable fix because It hides the LSP violation instead of removing it.
+
+
+## Qst 5 : 
+  
+It is impossible not to create the `parking.log` file with the current design because of the class `ParkingGarage`
+creates its own  instance of `FileLogger` (line 9) `private final FileLogger logger = new FileLogger("parking.log")`
