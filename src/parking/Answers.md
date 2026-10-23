@@ -23,5 +23,20 @@ Review table :
 | ISP | `PaymentMethod` | 3-7 | Large interface: imposes `refund()` on cash, which cannot refund . |
 | DIP | `ParkingGarage` | 9 | `new FileLogger("parking.log")`: policy builds a concrete detail $\rightarrow$ untestable without the file. |
 | DIP | `ParkingGarage` | 3, 21-22, 35 | Policy knows concrete details: `IOException` from the file logger leaks into `checkout`. |
- 
 
+
+## Qst 3:
+- **Request**: a new vehicle type BUS, charged 15 MAD per hour   
+  **Affected classes**: `ParkingGarage`
+
+
+- **Request**: a new payment method by mobile wallet, which can be refunded  
+  **Affected classes**: `Main` (to use it)
+
+
+- **Request**:   receipts logged in a database instead of a file  
+  **Affected classes**: `ParkingGarage` , `FileLogger`
+
+
+- **Request**: a daily report in CSV format   
+  **Affected classes**:`ParkingGarage` 
