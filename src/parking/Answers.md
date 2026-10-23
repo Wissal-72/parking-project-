@@ -39,4 +39,11 @@ Review table :
 
 
 - **Request**: a daily report in CSV format   
-  **Affected classes**:`ParkingGarage` 
+  **Affected classes**:`ParkingGarage`
+
+
+## Qst 4: 
+  
+`Cashpayment.refund` throws an `UnsupportedOperationException`. This breaks the Liskov Substitution principle 
+because the interface `PaymentMethod` promises a refund method.   
+$\rightarrow$ the `instanceof` test is not an acceptable fix because It hides the LSP violation instead of removing it.
